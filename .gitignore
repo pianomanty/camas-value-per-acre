@@ -216,5 +216,17 @@ __marimo__/
 .streamlit/secrets.toml
 
 
-/data**
+# 1. Ignore everything inside /data/ at any folder level
+/data/**
+
+# 2. Re-include all directories so Git can traverse down the folder tree
+!/data/**/
+
+# 3. Exception: Do NOT ignore .gitkeep files anywhere under /data/
+!/data/**/.gitkeep
+
 /web/tiles**
+
+# Annoying mac files
+.DS_Store
+**/.DS_Store

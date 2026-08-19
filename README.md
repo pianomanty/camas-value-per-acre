@@ -1,6 +1,22 @@
-# Chicago/Cook County Value Per Acre Map
+# Camas Value Per Acre Map
 
-Interactive 3D map visualizing property tax value per acre across Chicago and Cook County. Built with Cook County 2024 assessment data by [Strong Towns Chicago](https://strongtownschicago.org).
+Interactive 3D map visualizing property tax value per acre across Camas (and likely Clark County).
+
+# Installation/Setup
+1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/)
+2. Download [Property Assessment and Treasurer Data](https://hub-clarkcountywa.opendata.arcgis.com/pages/property-assessment-and-taxation-data) and Volume 1 of [Digital GIS Data Bulk Download](https://hub-clarkcountywa.opendata.arcgis.com/pages/digital-gis-data-download)
+3. Exctract them in the `Data/` folder
+4. ???
+5. Profit
+\
+\
+\
+\
+\
+\
+# Original Document:
+
+Originally built for Chicago and Cook County with Cook County 2024 assessment data by [Strong Towns Chicago](https://strongtownschicago.org).
 
 **[View Live Map →](https://www.strongtownschicago.org/value-per-acre-map)**
 

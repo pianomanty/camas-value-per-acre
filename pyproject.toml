@@ -8,4 +8,8 @@ dependencies = [
     "numpy>=2.3.5",
     "shapely>=2.1.2",
     "pyogrio>=0.12.1",
+    "ipynb>=0.5.1",
+    "ipywidgets>=8.1.8",
+    "ipympl>=0.10.0",
+    "ipykernel>=7.3.0",
 ]

@@ -16,31 +16,35 @@ from shapely.ops import unary_union
 
 def get_market_value_multiplier(class_code):
     """
-    Cook County assessment levels:
-    - Class 1-3 (Residential): 10% assessed → 10x multiplier
-    - Class 4 (Not-for-profit): 20% assessed → 5x multiplier
-    - Class 5 (Commercial/Industrial): 25% assessed → 4x multiplier
-    - Class 6-8 (Incentive): varies, but generally commercial/industrial base → 4x multiplier
-    - Class 9 (Incentive Multi-family): 10% assessed → 10x multiplier
-    - Class 0, EX, RR (Exempt): 0% assessed → 0x multiplier
-    
-    https://prodassets.cookcountyassessoril.gov/s3fs-public/form_documents/classcode.pdf
+    Washington just uses 100% assessed value always
     """
-    if pd.isna(class_code):
-        return 10
+    return 1.0
+    # """
+    # Cook County assessment levels:
+    # - Class 1-3 (Residential): 10% assessed → 10x multiplier
+    # - Class 4 (Not-for-profit): 20% assessed → 5x multiplier
+    # - Class 5 (Commercial/Industrial): 25% assessed → 4x multiplier
+    # - Class 6-8 (Incentive): varies, but generally commercial/industrial base → 4x multiplier
+    # - Class 9 (Incentive Multi-family): 10% assessed → 10x multiplier
+    # - Class 0, EX, RR (Exempt): 0% assessed → 0x multiplier
     
-    major_class = str(class_code)[0]
+    # https://prodassets.cookcountyassessoril.gov/s3fs-public/form_documents/classcode.pdf
+    # """
+    # if pd.isna(class_code):
+    #     return 10
     
-    if major_class in ['1', '2', '3', '9']:  # 9 = incentive multi-family at 10%
-        return 10
-    elif major_class == '4':
-        return 5
-    elif major_class in ['5', '6', '7', '8']:  # Incentive classes 6-8 vary, but commercial/industrial base
-        return 4
-    elif major_class == '0' or class_code in ['EX', 'RR']:
-        return 0  # Exempt
-    else:
-        return 10  # Default
+    # major_class = str(class_code)[0]
+    
+    # if major_class in ['1', '2', '3', '9']:  # 9 = incentive multi-family at 10%
+    #     return 10
+    # elif major_class == '4':
+    #     return 5
+    # elif major_class in ['5', '6', '7', '8']:  # Incentive classes 6-8 vary, but commercial/industrial base
+    #     return 4
+    # elif major_class == '0' or class_code in ['EX', 'RR']:
+    #     return 0  # Exempt
+    # else:
+    #     return 10  # Default
 
 def clean_pin_10digit(pin):
     """Standardize PINs to 10 digits"""
